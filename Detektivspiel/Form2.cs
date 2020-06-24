@@ -25,7 +25,7 @@ namespace Detektivspiel
         string password = "test";
         Int16 port = 3306;
         string database = "detektivspiel";
-        readonly string ssl_mode = "Preferred";
+        string ssl_mode = "Preferred";
 
         MySqlConnection detektivspielConnection = new MySqlConnection();
         MySqlCommand detektivspielCommand = new MySqlCommand();
@@ -129,9 +129,7 @@ namespace Detektivspiel
                     //Letzte Frage 
                     Antwortfeld.Visible = false;
                     btn_Antwort_bestaetigen.Visible = false;
-                    
-                    // erst nach dem erstellen des neues Eintrags möglich
-                    //btn_Fallgeloest.Visible = true;
+                    btn_Fallgeloest.Visible = true;
 
                 }
                 btn_zurueck.Enabled = true;
@@ -259,7 +257,6 @@ namespace Detektivspiel
                 if (anzahl > 0)
                 {
                     MessageBox.Show("Ein Datensatz wurde eingefügt!");
-                    btn_Fallgeloest.Visible = true;
                 }
             }
             else
