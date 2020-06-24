@@ -19,18 +19,6 @@ namespace Detektivspiel
         int m_Aktuell;
         int m_LetzteAntwort = -1;
 
-        // database connection information
-        string server = "127.0.0.1";
-        string user_id = "test";
-        string password = "test";
-        Int16 port = 3306;
-        string database = "detektivspiel";
-        string ssl_mode = "Preferred";
-
-        MySqlConnection con = new MySqlConnection();
-        MySqlCommand cmd = new MySqlCommand();
-        MySqlDataReader reader;
-
         public Form2()
         {
             InitializeComponent();
@@ -93,17 +81,6 @@ namespace Detektivspiel
             Antwortfeld.Text = "";
             btn_weiter.Enabled = false;
             btn_zurueck.Enabled = false;
-
-            //prepopulate MySQL-Connection 
-            con.ConnectionString =
-                $"server={server};" +
-                $"user id={user_id};" +
-                $"password={password};" +
-                $"port={port};" +
-                $"database={database};" +
-                $"SslMode={ssl_mode}";
-
-            cmd.Connection = con;
         }
 
         private void btn_weiter_Click(object sender, EventArgs e)
@@ -236,38 +213,31 @@ namespace Detektivspiel
 
         private void btn_RunQuery_Click(object sender, EventArgs e)
         {
-            // check if query string is set
-            if (!(Txt_QueryCmd.TextLength > 1))
-            {
-                return;
-            }
+            string server = "127.0.0.1";
+            string user_id = "test";
+            string password = "test";
+            Int16 port = 3306;
+            string database = "detektivspiel";
+            string ssl_mode = "Preffered";
 
+            MySqlConnection con = new MySqlConnection();
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataReader reader;
+
+            con.ConnectionString = 
+                $"server={server};" +
+                $"user id={user_id};" +
+                $"password={password};" +
+                $"port={port};" +
+                $"database={database};" +
+                $"SslMode={ssl_mode}";
+
+            cmd.Connection = con;
             cmd.CommandText = Txt_QueryCmd.Text;
             
             try
             {
-                con.Open();
 
-                reader = cmd.ExecuteReader();
-                Lst_QueryResult.Items.Clear();
-
-                while(reader.Read())
-                {
-                    string row_text = "";
-
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        row_text += reader.GetValue(i) + "\t";
-                    }
-                    Lst_QueryResult.Items.Add(row_text);
-                }
-                
-                reader.Close();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
     }
