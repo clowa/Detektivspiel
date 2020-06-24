@@ -19,6 +19,17 @@ namespace Detektivspiel
         int m_Aktuell;
         int m_LetzteAntwort = -1;
 
+        // database connection information
+        string server = "127.0.0.1";
+        string user_id = "test";
+        string password = "test";
+        Int16 port = 3306;
+        string database = "detektivspiel";
+        string ssl_mode = "Preferred";
+
+        MySqlConnection detektivspielConnection = new MySqlConnection();
+        MySqlCommand detektivspielCommand = new MySqlCommand();
+
         public Form2()
         {
             InitializeComponent();
@@ -27,7 +38,7 @@ namespace Detektivspiel
             m_Fragen = new string[8];
             m_Antworten = new string[8];
             m_lblHinweis = new string[8];
- 
+
             //Anfangs sind wir bei der ersten Frage
             m_Aktuell = 0;
 
@@ -70,17 +81,26 @@ namespace Detektivspiel
 
             //Fortschrittsanzeige
             progressBar1.Minimum = 0;
-            progressBar1.Maximum = m_Fragen.Length-1;
+            progressBar1.Maximum = m_Fragen.Length - 1;
             progressBar1.Value = 0;
 
             //controls set (hinweis, Frage, )
-            lbl_hinweis.Text = m_lblHinweis[m_Aktuell]; 
+            lbl_hinweis.Text = m_lblHinweis[m_Aktuell];
             Hinweistext.Text = m_Hinweise[m_Aktuell];
             Frage.Text = m_Fragen[m_Aktuell];
             Antwortfeld.Select();
             Antwortfeld.Text = "";
             btn_weiter.Enabled = false;
             btn_zurueck.Enabled = false;
+
+            //prepopulate MySQL-Connection 
+            detektivspielConnection.ConnectionString =
+                $"server={server};" +
+                $"user id={user_id};" +
+                $"password={password};" +
+                $"port={port};" +
+                $"database={database};" +
+                $"SslMode={ssl_mode}";
         }
 
         private void btn_weiter_Click(object sender, EventArgs e)
@@ -90,7 +110,7 @@ namespace Detektivspiel
 
         private void GeheZu()
         {
-           if (m_Aktuell + 1 < m_Fragen.Length)
+            if (m_Aktuell + 1 < m_Fragen.Length)
             {
                 m_Aktuell = m_Aktuell + 1;
                 lbl_hinweis.Text = m_lblHinweis[m_Aktuell];
@@ -107,7 +127,7 @@ namespace Detektivspiel
                     btn_weiter.Enabled = false;
 
                     //Letzte Frage 
-                    Antwortfeld.Visible= false;
+                    Antwortfeld.Visible = false;
                     btn_Antwort_bestaetigen.Visible = false;
                     btn_Fallgeloest.Visible = true;
 
@@ -116,9 +136,9 @@ namespace Detektivspiel
             }
         }
 
-         private void btn_zurueck_Click(object sender, EventArgs e)
+        private void btn_zurueck_Click(object sender, EventArgs e)
         {
-            if (m_Aktuell  > 0 )
+            if (m_Aktuell > 0)
             {
                 m_Aktuell = m_Aktuell - 1;
 
@@ -139,12 +159,12 @@ namespace Detektivspiel
 
         private void Antwort_bestaetigen_Click(object sender, EventArgs e)
         {
-            if (m_Antworten[m_LetzteAntwort+1] == Antwortfeld.Text)
+            if (m_Antworten[m_LetzteAntwort + 1] == Antwortfeld.Text)
             {
                 //Richtige Antwort
-                m_LetzteAntwort = m_LetzteAntwort + 1; 
+                m_LetzteAntwort = m_LetzteAntwort + 1;
                 progressBar1.Value = m_LetzteAntwort + 1;
-                
+
                 if (m_LetzteAntwort + 1 == m_Antworten.Length - 1)
                 {
                     //vorletzter Hinweis
@@ -213,32 +233,93 @@ namespace Detektivspiel
 
         private void btn_RunQuery_Click(object sender, EventArgs e)
         {
-            string server = "127.0.0.1";
-            string user_id = "test";
-            string password = "test";
-            Int16 port = 3306;
-            string database = "detektivspiel";
-            string ssl_mode = "Preffered";
+            // check if query string is not set
+            if (!(Txt_QueryCmd.TextLength > 1))
+            {
+                return;
+            }
 
-            MySqlConnection con = new MySqlConnection();
-            MySqlCommand cmd = new MySqlCommand();
-            MySqlDataReader reader;
+            if (Txt_QueryCmd.Text.ToUpper().StartsWith("SELECT"))
+            {
+                DataTable myDataTable = RunSelectQuery(detektivspielConnection, detektivspielCommand, out bool success);
 
-            con.ConnectionString = 
-                $"server={server};" +
-                $"user id={user_id};" +
-                $"password={password};" +
-                $"port={port};" +
-                $"database={database};" +
-                $"SslMode={ssl_mode}";
+                if (success)
+                {
+                    //display dataset in a DataGrid
+                    Grid_QueryResult.DataSource = myDataTable;
+                    Grid_QueryResult.AutoResizeColumns();
+                }
+            }
+            else if (Txt_QueryCmd.Text.ToUpper().StartsWith("INSERT"))
+            {
+                int anzahl = RunNonQuery(detektivspielConnection, detektivspielCommand);
 
+                if (anzahl > 0)
+                {
+                    MessageBox.Show("Ein Datensatz wurde eingefügt!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Es sind nur SELECT und INSERT Querys zugelassen!!!");
+            }
+        }
+
+        private DataTable RunSelectQuery(MySqlConnection con, MySqlCommand cmd, out bool success)
+        {
+            // link db connection to query command
             cmd.Connection = con;
+            // add query text
             cmd.CommandText = Txt_QueryCmd.Text;
-            
+
+            // create RAM table
+            DataTable dt = new DataTable();
+
             try
             {
+                con.Open();
 
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+
+                // fill RAM-Table with query result
+                adapter.Fill(dt);
+
+                success = true;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                success = false;
+            }
+
+            con.Close();
+            return dt;
+        }
+
+        private Int32 RunNonQuery(MySqlConnection con, MySqlCommand cmd)
+        {
+            // link db connection to query command
+            cmd.Connection = con;
+            // add query text
+            cmd.CommandText = Txt_QueryCmd.Text;
+
+            // set default
+            Int32 count = -1;
+
+            try
+            {
+                con.Open();
+
+                // get number of datasets
+                count = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            con.Close();
+            return count;
         }
     }
 }
