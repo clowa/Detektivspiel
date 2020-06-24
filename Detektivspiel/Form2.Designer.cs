@@ -39,11 +39,11 @@
             this.btn_Verlassen = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btn_Fallgeloest = new System.Windows.Forms.Button();
-            this.Txt_QueryResult = new System.Windows.Forms.TextBox();
             this.Lbl_QueryResult = new System.Windows.Forms.Label();
             this.btn_RunQuery = new System.Windows.Forms.Button();
             this.Lbl_QueryCmd = new System.Windows.Forms.Label();
             this.Txt_QueryCmd = new System.Windows.Forms.TextBox();
+            this.Lst_QueryResult = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label_hinweis
@@ -175,21 +175,11 @@
             this.btn_Fallgeloest.Visible = false;
             this.btn_Fallgeloest.Click += new System.EventHandler(this.btn_Fallschliessen_Click);
             // 
-            // Txt_QueryResult
-            // 
-            this.Txt_QueryResult.Location = new System.Drawing.Point(47, 1025);
-            this.Txt_QueryResult.MaxLength = 10000;
-            this.Txt_QueryResult.Multiline = true;
-            this.Txt_QueryResult.Name = "Txt_QueryResult";
-            this.Txt_QueryResult.ReadOnly = true;
-            this.Txt_QueryResult.Size = new System.Drawing.Size(788, 150);
-            this.Txt_QueryResult.TabIndex = 24;
-            // 
             // Lbl_QueryResult
             // 
             this.Lbl_QueryResult.AutoSize = true;
             this.Lbl_QueryResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_QueryResult.Location = new System.Drawing.Point(47, 981);
+            this.Lbl_QueryResult.Location = new System.Drawing.Point(47, 924);
             this.Lbl_QueryResult.Name = "Lbl_QueryResult";
             this.Lbl_QueryResult.Size = new System.Drawing.Size(175, 30);
             this.Lbl_QueryResult.TabIndex = 23;
@@ -199,7 +189,7 @@
             // 
             this.btn_RunQuery.AutoSize = true;
             this.btn_RunQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RunQuery.Location = new System.Drawing.Point(637, 932);
+            this.btn_RunQuery.Location = new System.Drawing.Point(637, 875);
             this.btn_RunQuery.Margin = new System.Windows.Forms.Padding(6);
             this.btn_RunQuery.Name = "btn_RunQuery";
             this.btn_RunQuery.Size = new System.Drawing.Size(198, 50);
@@ -212,7 +202,7 @@
             // 
             this.Lbl_QueryCmd.AutoSize = true;
             this.Lbl_QueryCmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_QueryCmd.Location = new System.Drawing.Point(47, 712);
+            this.Lbl_QueryCmd.Location = new System.Drawing.Point(47, 655);
             this.Lbl_QueryCmd.Name = "Lbl_QueryCmd";
             this.Lbl_QueryCmd.Size = new System.Drawing.Size(160, 30);
             this.Lbl_QueryCmd.TabIndex = 21;
@@ -220,19 +210,28 @@
             // 
             // Txt_QueryCmd
             // 
-            this.Txt_QueryCmd.Location = new System.Drawing.Point(47, 760);
+            this.Txt_QueryCmd.Location = new System.Drawing.Point(47, 703);
             this.Txt_QueryCmd.MaxLength = 10000;
             this.Txt_QueryCmd.Multiline = true;
             this.Txt_QueryCmd.Name = "Txt_QueryCmd";
             this.Txt_QueryCmd.Size = new System.Drawing.Size(788, 150);
             this.Txt_QueryCmd.TabIndex = 20;
             // 
+            // Lst_QueryResult
+            // 
+            this.Lst_QueryResult.FormattingEnabled = true;
+            this.Lst_QueryResult.ItemHeight = 25;
+            this.Lst_QueryResult.Location = new System.Drawing.Point(48, 964);
+            this.Lst_QueryResult.Name = "Lst_QueryResult";
+            this.Lst_QueryResult.Size = new System.Drawing.Size(788, 179);
+            this.Lst_QueryResult.TabIndex = 25;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 1209);
-            this.Controls.Add(this.Txt_QueryResult);
+            this.ClientSize = new System.Drawing.Size(874, 1186);
+            this.Controls.Add(this.Lst_QueryResult);
             this.Controls.Add(this.Lbl_QueryResult);
             this.Controls.Add(this.btn_RunQuery);
             this.Controls.Add(this.Lbl_QueryCmd);
@@ -270,10 +269,10 @@
         private System.Windows.Forms.Button btn_Verlassen;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btn_Fallgeloest;
-        private System.Windows.Forms.TextBox Txt_QueryResult;
         private System.Windows.Forms.Label Lbl_QueryResult;
         private System.Windows.Forms.Button btn_RunQuery;
         private System.Windows.Forms.Label Lbl_QueryCmd;
         private System.Windows.Forms.TextBox Txt_QueryCmd;
+        private System.Windows.Forms.ListBox Lst_QueryResult;
     }
 }
