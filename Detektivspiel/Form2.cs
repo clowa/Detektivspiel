@@ -18,19 +18,19 @@ namespace Detektivspiel
         string[] m_lblHinweis;
         int m_Aktuell;
         int m_LetzteAntwort = -1;
-
-        // database connection information
-        string server = "127.0.0.1";
-        string user_id = "test";
-        string password = "test";
-        Int16 port = 3306;
-        string database = "detektivspiel";
-        string ssl_mode = "Preferred";
+        
 
         MySqlConnection detektivspielConnection = new MySqlConnection();
         MySqlCommand detektivspielCommand = new MySqlCommand();
 
-        public Form2()
+        private string server;
+        private string user_id;
+        private string password;
+        private short port;
+        private string database;
+        private string ssl_mode;
+
+        public Form2(string login_server, string login_user_id, string login_password, short login_port, string login_database, string login_ssl_mode)
         {
             InitializeComponent();
 
@@ -41,6 +41,14 @@ namespace Detektivspiel
 
             //Anfangs sind wir bei der ersten Frage
             m_Aktuell = 0;
+
+            //Zuweisen der Datenbank-Anmeldeinformationen
+            server = login_server;
+            user_id = login_user_id;
+            password = login_password;
+            port = login_port;
+            database = login_database;
+            ssl_mode = login_ssl_mode;
 
         }
 

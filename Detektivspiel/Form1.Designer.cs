@@ -35,9 +35,10 @@
             // 
             // OK_Button_Willkommenstext
             // 
-            this.OK_Button_Willkommenstext.Location = new System.Drawing.Point(500, 220);
+            this.OK_Button_Willkommenstext.Location = new System.Drawing.Point(1000, 423);
+            this.OK_Button_Willkommenstext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.OK_Button_Willkommenstext.Name = "OK_Button_Willkommenstext";
-            this.OK_Button_Willkommenstext.Size = new System.Drawing.Size(75, 23);
+            this.OK_Button_Willkommenstext.Size = new System.Drawing.Size(150, 44);
             this.OK_Button_Willkommenstext.TabIndex = 3;
             this.OK_Button_Willkommenstext.Text = "OK";
             this.OK_Button_Willkommenstext.UseVisualStyleBackColor = true;
@@ -46,20 +47,22 @@
             // Willkommenstext
             // 
             this.Willkommenstext.AutoSize = true;
-            this.Willkommenstext.Location = new System.Drawing.Point(12, 9);
+            this.Willkommenstext.Location = new System.Drawing.Point(24, 17);
+            this.Willkommenstext.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Willkommenstext.Name = "Willkommenstext";
-            this.Willkommenstext.Size = new System.Drawing.Size(563, 208);
+            this.Willkommenstext.Size = new System.Drawing.Size(1145, 400);
             this.Willkommenstext.TabIndex = 4;
             this.Willkommenstext.Text = resources.GetString("Willkommenstext.Text");
             this.Willkommenstext.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 249);
+            this.ClientSize = new System.Drawing.Size(1160, 479);
             this.Controls.Add(this.Willkommenstext);
             this.Controls.Add(this.OK_Button_Willkommenstext);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Herzlich willkommen bei unserem Detektivspiel";
             this.ResumeLayout(false);

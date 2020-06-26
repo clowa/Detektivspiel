@@ -59,6 +59,8 @@
             // 
             // Hinweistext
             // 
+            this.Hinweistext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Hinweistext.BackColor = System.Drawing.SystemColors.Info;
             this.Hinweistext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hinweistext.Location = new System.Drawing.Point(42, 69);
@@ -95,7 +97,7 @@
             // 
             // btn_weiter
             // 
-            this.btn_weiter.AutoSize = true;
+            this.btn_weiter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_weiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_weiter.Location = new System.Drawing.Point(520, 275);
             this.btn_weiter.Margin = new System.Windows.Forms.Padding(6);
@@ -118,6 +120,7 @@
             // 
             // btn_Antwort_bestaetigen
             // 
+            this.btn_Antwort_bestaetigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Antwort_bestaetigen.AutoSize = true;
             this.btn_Antwort_bestaetigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Antwort_bestaetigen.Location = new System.Drawing.Point(638, 463);
@@ -143,6 +146,7 @@
             // 
             // btn_Verlassen
             // 
+            this.btn_Verlassen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Verlassen.AutoSize = true;
             this.btn_Verlassen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Verlassen.Location = new System.Drawing.Point(638, 525);
@@ -156,6 +160,8 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(48, 337);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(6);
             this.progressBar1.Name = "progressBar1";
@@ -188,6 +194,7 @@
             // 
             // btn_RunQuery
             // 
+            this.btn_RunQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_RunQuery.AutoSize = true;
             this.btn_RunQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RunQuery.Location = new System.Drawing.Point(637, 875);
@@ -211,6 +218,8 @@
             // 
             // Txt_QueryCmd
             // 
+            this.Txt_QueryCmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_QueryCmd.Location = new System.Drawing.Point(47, 703);
             this.Txt_QueryCmd.MaxLength = 10000;
             this.Txt_QueryCmd.Multiline = true;
@@ -222,6 +231,9 @@
             // 
             this.Grid_QueryResult.AllowUserToAddRows = false;
             this.Grid_QueryResult.AllowUserToDeleteRows = false;
+            this.Grid_QueryResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Grid_QueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid_QueryResult.Location = new System.Drawing.Point(48, 990);
             this.Grid_QueryResult.Name = "Grid_QueryResult";
