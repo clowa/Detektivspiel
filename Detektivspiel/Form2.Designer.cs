@@ -265,6 +265,7 @@
             this.Controls.Add(this.Hinweistext);
             this.Controls.Add(this.label_hinweis);
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(900, 1257);
             this.Name = "Form2";
             this.Text = "Detektivspiel";
             this.Load += new System.EventHandler(this.Form2_Load);

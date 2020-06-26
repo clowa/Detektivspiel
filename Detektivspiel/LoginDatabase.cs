@@ -25,18 +25,13 @@ namespace Detektivspiel
             InitializeComponent();
         }
 
-        private void LoginDatabase_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_loginDatabase_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Sind alle Ihre Eingaben korrekt?", "Anmelden", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MySqlConnection con = new MySqlConnection();
-                // database connection information
 
+                // database connection information
                 server = (Txt_server.Text.Length != 0 ? Txt_server.Text : "127.0.0.1");
                 user_id = (Txt_username.Text.Length != 0 ? Txt_username.Text : "root");
                 password = (Txt_password.Text.Length != 0 ? Txt_password.Text : "");
@@ -52,6 +47,8 @@ namespace Detektivspiel
                         $"port={port};" +
                         $"database={database};" +
                         $"SslMode={ssl_mode}";
+                    con.Open();
+                    con.Close();
                     this.Hide();
                     Form2 form = new Form2(server, user_id, password, port, database, ssl_mode);
                     form.ShowDialog();
@@ -61,9 +58,7 @@ namespace Detektivspiel
                 {
                     MessageBox.Show(ex.Message);
                 }
-                
             }
-            
         }
     }
 }

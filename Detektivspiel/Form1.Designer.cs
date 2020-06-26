@@ -36,7 +36,7 @@
             // OK_Button_Willkommenstext
             // 
             this.OK_Button_Willkommenstext.Location = new System.Drawing.Point(1000, 423);
-            this.OK_Button_Willkommenstext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.OK_Button_Willkommenstext.Margin = new System.Windows.Forms.Padding(6);
             this.OK_Button_Willkommenstext.Name = "OK_Button_Willkommenstext";
             this.OK_Button_Willkommenstext.Size = new System.Drawing.Size(150, 44);
             this.OK_Button_Willkommenstext.TabIndex = 3;
@@ -62,7 +62,8 @@
             this.ClientSize = new System.Drawing.Size(1160, 479);
             this.Controls.Add(this.Willkommenstext);
             this.Controls.Add(this.OK_Button_Willkommenstext);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Herzlich willkommen bei unserem Detektivspiel";
             this.ResumeLayout(false);
