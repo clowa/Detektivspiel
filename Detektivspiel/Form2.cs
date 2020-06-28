@@ -20,6 +20,7 @@ namespace Detektivspiel
         int m_LetzteAntwort = -1;
         
 
+        // database connection objects
         MySqlConnection detektivspielConnection = new MySqlConnection();
         MySqlCommand detektivspielCommand = new MySqlCommand();
 
@@ -42,7 +43,7 @@ namespace Detektivspiel
             //Anfangs sind wir bei der ersten Frage
             m_Aktuell = 0;
 
-            //Zuweisen der Datenbank-Anmeldeinformationen
+            // assign the database credentials from database loginmask form
             server = login_server;
             user_id = login_user_id;
             password = login_password;
@@ -101,7 +102,7 @@ namespace Detektivspiel
             btn_weiter.Enabled = false;
             btn_zurueck.Enabled = false;
 
-            //prepopulate MySQL-Connection 
+            // prepopulate MySQL-Connection 
             detektivspielConnection.ConnectionString =
                 $"server={server};" +
                 $"user id={user_id};" +
@@ -289,7 +290,7 @@ namespace Detektivspiel
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
-                // fill RAM-Table with query result
+                // fil the RAM-Table with the query result
                 adapter.Fill(dt);
 
                 success = true;

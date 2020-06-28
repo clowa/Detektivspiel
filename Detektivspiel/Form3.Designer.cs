@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MsgBox));
             this.ok_btn_msgbox = new System.Windows.Forms.Button();
             this.lbl_msgbox = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -37,7 +38,7 @@
             this.ok_btn_msgbox.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ok_btn_msgbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ok_btn_msgbox.Location = new System.Drawing.Point(680, 246);
-            this.ok_btn_msgbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ok_btn_msgbox.Margin = new System.Windows.Forms.Padding(6);
             this.ok_btn_msgbox.Name = "ok_btn_msgbox";
             this.ok_btn_msgbox.Size = new System.Drawing.Size(136, 40);
             this.ok_btn_msgbox.TabIndex = 0;
@@ -63,7 +64,8 @@
             this.ClientSize = new System.Drawing.Size(848, 310);
             this.Controls.Add(this.lbl_msgbox);
             this.Controls.Add(this.ok_btn_msgbox);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(874, 381);
             this.Name = "MsgBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

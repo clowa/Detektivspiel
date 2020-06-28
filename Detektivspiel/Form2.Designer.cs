@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label_hinweis = new System.Windows.Forms.Label();
             this.Hinweistext = new System.Windows.Forms.Label();
             this.lbl_hinweis = new System.Windows.Forms.Label();
@@ -264,6 +265,7 @@
             this.Controls.Add(this.lbl_hinweis);
             this.Controls.Add(this.Hinweistext);
             this.Controls.Add(this.label_hinweis);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(900, 1257);
             this.Name = "Form2";
