@@ -67,5 +67,14 @@ namespace Detektivspiel
                 }
             }
         }
+
+        private void LoginDatabase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // pressing the Enter key corresponds to clicking on "Login"
+                Btn_loginDatabase.PerformClick();
+            }
+        }
     }
 }

@@ -53,7 +53,6 @@
             this.Willkommenstext.Size = new System.Drawing.Size(1145, 400);
             this.Willkommenstext.TabIndex = 4;
             this.Willkommenstext.Text = resources.GetString("Willkommenstext.Text");
-            this.Willkommenstext.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // Form1
             // 
