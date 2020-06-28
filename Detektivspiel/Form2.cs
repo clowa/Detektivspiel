@@ -254,18 +254,31 @@ namespace Detektivspiel
                     Grid_QueryResult.AutoResizeColumns();
                 }
             }
-            else if (Txt_QueryCmd.Text.ToUpper().StartsWith("INSERT"))
+            else if (Txt_QueryCmd.Text.ToUpper().StartsWith("INSERT") || Txt_QueryCmd.Text.ToUpper().StartsWith("UPDATE"))
             {
-                int anzahl = RunNonQuery(detektivspielConnection, detektivspielCommand);
-
-                if (anzahl > 0)
+                CheckNonQueryResult(RunNonQuery(detektivspielConnection, detektivspielCommand));
+            }
+            else if (Txt_QueryCmd.Text.ToUpper().StartsWith("DELETE"))
+            {
+                if (MessageBox.Show("Wollen Sie wirklich einen Datensatz löschen?", "Löschen", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Ein Datensatz wurde eingefügt!");
+                    CheckNonQueryResult(RunNonQuery(detektivspielConnection, detektivspielCommand));                 
                 }
             }
             else
             {
-                MessageBox.Show("Es sind nur SELECT und INSERT Querys zugelassen!!!");
+                MessageBox.Show("Es werden nur SELECT, UPDATE, INSERT und DELETE unterstützt!");
+            }
+        }
+
+        private void CheckNonQueryResult(int anzahl)
+        {
+            if (anzahl > 0)
+            {
+                MessageBox.Show(
+                    "Aktion wurde ausgeführt!\n" +
+                    $"Betroffene Datensätze:\t{anzahl}"
+                );
             }
         }
 
