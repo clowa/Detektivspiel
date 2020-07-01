@@ -1,5 +1,5 @@
 
-DROP DATABASE detektivspiel;
+DROP DATABASE IF EXISTS detektivspiel;
 CREATE DATABASE detektivspiel;
 USE detektivspiel;
 
