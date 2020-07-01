@@ -3,7 +3,6 @@ Game to learn SQL by examining a thief with a database.
 The program is only available in German.
 
 # Instructions
----
 ## Needed:
 * MySQL server
 * C# compiler
@@ -50,7 +49,6 @@ You can build the .exe by running `dotnet build` within the project directory. T
   You can also use the powershell [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) cmdlet.
 
 # Credits
----
 The original software was developed by IBM and written in JAVA. I have rewrite it in C#. The original can be found [here](https://www.ibm.com/developerworks/data/tutorials/dm0804moffatt/index.html).
 
 Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](http://www.flaticon.com/)
