@@ -48,11 +48,41 @@ You can build the .exe by running `dotnet build` within the project directory. T
 
   You can also use the powershell [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) cmdlet.
 
+# Database model
+
+The database consists of four tables: employee, hardware, lobby, and security. It also shows you the type of information stored in each of these tables:
+
+* The *employee* table stores information about each employee such as their employee number, name, manager, office number, phone number, and badge number.
+* The *security* table stores information as to when each employee or visitor badged in and out of the building (date and time).
+* The *lobby* table stores the badge number assigned to each visitor by name.
+* The *hardware* table stores the serial number and type number for every computer along with its location and the ID of the employee who is its primary user.
+
+```
+                                               +------------------+  +-----------------+
+                                               | Employee         |  | Hardware        |
+                                               |------------------|  |-----------------|
+                                               | Employee_ID      |<-| Employee_ID     |
+                                               | Last_name        |  | Location        |
+                           +----------------+  | First_name       |  | Type_number     |
+                           | Security       |  | Manager_ID       |  | Serial_number   |
+                           |----------------|  | Location         |  +-----------------+
+   +------------------+    | Sign_out_date  |  | Extension        |
+   | Lobby            |    | Sign_out_time  |  | Gender           |
+   |------------------|    | Sign_in_time   |  | Hair_colour      |
+   | Badge_number     |<---- Badge_number   |<-| Badge number     |
+   | Last_name        |    +----------------+  | Restricted_access|
+   | First_name       |                        +------------------+
+   +------------------+
+```
+
+
 # See also
 [verpeteren/SqlDetective](https://github.com/verpeteren/SqlDetective) if you look for other kind database  
 [w3schools SQL reference](https://www.w3schools.com/sql/sql_intro.asp) if you need a sql reference
 
 # Credits
 The original software was developed by IBM. I have rewrite it in C#. The original can be found [here](https://www.ibm.com/developerworks/data/tutorials/dm0804moffatt/index.html).
+
+My teacher also write a lot of code of this project. She forces me to mention her.
 
 Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](http://www.flaticon.com/)
