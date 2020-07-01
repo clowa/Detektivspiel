@@ -58,19 +58,19 @@ The database consists of four tables: employee, hardware, lobby, and security. I
 * The *hardware* table stores the serial number and type number for every computer along with its location and the ID of the employee who is its primary user.
 
 ```
-                                               +------------------+  +-----------------+
-                                               | Employee         |  | Hardware        |
-                                               |------------------|  |-----------------|
-                                               | Employee_ID      |<-| Employee_ID     |
-                                               | Last_name        |  | Location        |
-                           +----------------+  | First_name       |  | Type_number     |
-                           | Security       |  | Manager_ID       |  | Serial_number   |
-                           |----------------|  | Location         |  +-----------------+
-   +------------------+    | Sign_out_date  |  | Extension        |
-   | Lobby            |    | Sign_out_time  |  | Gender           |
-   |------------------|    | Sign_in_time   |  | Hair_colour      |
-   | Badge_number     |<---- Badge_number   |<-| Badge number     |
-   | Last_name        |    +----------------+  | Restricted_access|
+                                               +------------------+   +-----------------+
+                                               | Employee         |   | Hardware        |
+                                               |------------------|   |-----------------|
+                                               | Employee_ID      |<--| Employee_ID     |
+                                               | Last_name        |   | Location        |
+                          +----------------+   | First_name       |   | Type_number     |
+                          | Security       |   | Manager_ID       |   | Serial_number   |
+                          |----------------|   | Location         |   +-----------------+
+   +------------------+   | Sign_out_date  |   | Extension        |
+   | Lobby            |   | Sign_out_time  |   | Gender           |
+   |------------------|   | Sign_in_time   |   | Hair_colour      |
+   | Badge_number     |<--| Badge_number   |<--| Badge number     |
+   | Last_name        |   +----------------+   | Restricted_access|
    | First_name       |                        +------------------+
    +------------------+
 ```
@@ -83,6 +83,6 @@ The database consists of four tables: employee, hardware, lobby, and security. I
 # Credits
 The original software was developed by IBM. I have rewrite it in C#. The original can be found [here](https://www.ibm.com/developerworks/data/tutorials/dm0804moffatt/index.html).
 
-One of my teachers also write a lot of code of this project. She forces me to mention her.
+One of my teachers also writed a lot of code of this project. She forces me to mention her.
 
 Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](http://www.flaticon.com/)
