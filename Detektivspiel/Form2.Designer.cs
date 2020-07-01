@@ -45,6 +45,7 @@
             this.Lbl_QueryCmd = new System.Windows.Forms.Label();
             this.Txt_QueryCmd = new System.Windows.Forms.TextBox();
             this.Grid_QueryResult = new System.Windows.Forms.DataGridView();
+            this.Lbl_horizontalLine = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_QueryResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,14 +235,26 @@
             this.Grid_QueryResult.ReadOnly = true;
             this.Grid_QueryResult.RowHeadersWidth = 82;
             this.Grid_QueryResult.RowTemplate.Height = 33;
-            this.Grid_QueryResult.Size = new System.Drawing.Size(398, 125);
+            this.Grid_QueryResult.Size = new System.Drawing.Size(398, 95);
             this.Grid_QueryResult.TabIndex = 24;
+            // 
+            // Lbl_horizontalLine
+            // 
+            this.Lbl_horizontalLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_horizontalLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Lbl_horizontalLine.Location = new System.Drawing.Point(24, 320);
+            this.Lbl_horizontalLine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_horizontalLine.Name = "Lbl_horizontalLine";
+            this.Lbl_horizontalLine.Size = new System.Drawing.Size(398, 1);
+            this.Lbl_horizontalLine.TabIndex = 25;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 651);
+            this.ClientSize = new System.Drawing.Size(444, 621);
+            this.Controls.Add(this.Lbl_horizontalLine);
             this.Controls.Add(this.Grid_QueryResult);
             this.Controls.Add(this.Lbl_QueryResult);
             this.Controls.Add(this.btn_RunQuery);
@@ -259,7 +272,7 @@
             this.Controls.Add(this.Hinweistext);
             this.Controls.Add(this.label_hinweis);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(460, 690);
+            this.MinimumSize = new System.Drawing.Size(455, 660);
             this.Name = "Form2";
             this.Text = "Detektivspiel";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -287,5 +300,6 @@
         private System.Windows.Forms.Label Lbl_QueryCmd;
         private System.Windows.Forms.TextBox Txt_QueryCmd;
         private System.Windows.Forms.DataGridView Grid_QueryResult;
+        private System.Windows.Forms.Label Lbl_horizontalLine;
     }
 }

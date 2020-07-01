@@ -1,6 +1,6 @@
 # Detektivspiel
 Game to learn SQL by examining a thief with a database.  
-The program is only available in German.
+The program is **only available in German**.
 
 # Instructions
 ## Needed:
