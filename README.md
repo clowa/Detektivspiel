@@ -49,7 +49,7 @@ You can build the .exe by running `dotnet build` within the project directory. T
   You can also use the powershell [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) cmdlet.
 
 # See also
-[verpeteren/SqlDetective](https://github.com/verpeteren/SqlDetective)
+[verpeteren/SqlDetective](https://github.com/verpeteren/SqlDetective)  
 [w3schools SQL reference](https://www.w3schools.com/sql/sql_intro.asp)
 
 # Credits
