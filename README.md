@@ -83,6 +83,6 @@ The database consists of four tables: employee, hardware, lobby, and security. I
 # Credits
 The original software was developed by IBM. I have rewrite it in C#. The original can be found [here](https://www.ibm.com/developerworks/data/tutorials/dm0804moffatt/index.html).
 
-One of my teachers also writed a lot of code of this project. She forces me to mention her.
+One of my teachers also writed a lot of code of this project. She also wanted to be named.
 
 Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](http://www.flaticon.com/)
