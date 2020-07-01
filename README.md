@@ -1,5 +1,5 @@
 # Detektivspiel
-Game to learn SQL by examining a thief with a database.  
+Learn SQL basics and Relational database management by playing a modern investigation. Use technology to find the theaf and uncover how database technology can be applied to business situations to help you manage your company information.  
 The program is **only available in German**.
 
 # Instructions
@@ -48,7 +48,11 @@ You can build the .exe by running `dotnet build` within the project directory. T
 
   You can also use the powershell [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) cmdlet.
 
+# See also
+[verpeteren/SqlDetective](https://github.com/verpeteren/SqlDetective)
+[w3schools SQL reference](https://www.w3schools.com/sql/sql_intro.asp)
+
 # Credits
-The original software was developed by IBM and written in JAVA. I have rewrite it in C#. The original can be found [here](https://www.ibm.com/developerworks/data/tutorials/dm0804moffatt/index.html).
+The original software was developed by IBM. I have rewrite it in C#. The original can be found [here](https://www.ibm.com/developerworks/data/tutorials/dm0804moffatt/index.html).
 
 Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](http://www.flaticon.com/)
