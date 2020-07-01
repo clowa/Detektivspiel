@@ -1,5 +1,5 @@
 # Detektivspiel
-Learn SQL basics and Relational database management by playing a modern investigation. Use technology to find the theaf and uncover how database technology can be applied to business situations to help you manage your company information.  
+Learn SQL basics and relational database management by playing a modern investigation. Use technology to find the theaf and uncover how database technology can be applied to business situations to help you manage your company information.  
 The program is **only available in German**.
 
 # Instructions
@@ -15,7 +15,7 @@ It's recommended to use a docker container to provide the database. However you 
 ## Import the database
 You have to import the database "detektivspiel". The corresponding [database dump](Detektivspiel.sql) is located in this repo.
 
-You can import the database eather via the mysql cli client or via a graphical MySQL interface.  
+You can import the database either via the mysql cli client or via a graphical MySQL interface.  
 There are probably more ways.
 
 **MySQL cli command:**
@@ -27,7 +27,7 @@ You can find more information [here](https://www.digitalocean.com/community/tuto
 
 **via GUI**
 
-How to import the SQL dump depends on the used tool. Mostly you only need to open the file and run the Query.
+How to import the SQL dump depends on the used tool. Most times you only need to open the file and run the Query.
 
 ## Run the programm
 This project was developed at school with Visual Studio.
@@ -37,7 +37,7 @@ You can build the .exe by running `dotnet build` within the project directory. T
 ## Known Issues
 ### Need to unblock the downloaded files to build and run the projekt.  
   Error message:  
-  `Error Couldn't process file frmMain.resx due to its being in the Internet or Restricted zone or having the mark of the web on the file. Remove the mark of the web if you want to process these files. FinancialCalculations`  
+  `Error Couldn't process file FrmMain.resx due to its being in the Internet or Restricted zone or having the mark of the web on the file. Remove the mark of the web if you want to process these files. FinancialCalculations`  
   There are a lot of proposed solutions out there, but this is what worked for me:  
   _Unblock the file in Windows Explorer_
   1. Close the project in Visual Studio
