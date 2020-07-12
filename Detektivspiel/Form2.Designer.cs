@@ -214,7 +214,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_QueryCmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Txt_QueryCmd.Location = new System.Drawing.Point(24, 366);
-            this.Txt_QueryCmd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Txt_QueryCmd.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_QueryCmd.MaxLength = 10000;
             this.Txt_QueryCmd.Multiline = true;
             this.Txt_QueryCmd.Name = "Txt_QueryCmd";
@@ -230,9 +230,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Grid_QueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid_QueryResult.Location = new System.Drawing.Point(24, 515);
-            this.Grid_QueryResult.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Grid_QueryResult.Margin = new System.Windows.Forms.Padding(2);
             this.Grid_QueryResult.Name = "Grid_QueryResult";
             this.Grid_QueryResult.ReadOnly = true;
+            this.Grid_QueryResult.RowHeadersVisible = false;
             this.Grid_QueryResult.RowHeadersWidth = 82;
             this.Grid_QueryResult.RowTemplate.Height = 33;
             this.Grid_QueryResult.Size = new System.Drawing.Size(398, 95);

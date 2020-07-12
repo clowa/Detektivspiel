@@ -118,64 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;Willkommenstext.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;OK_Button_Willkommenstext.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="OK_Button_Willkommenstext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>724, 298</value>
-  </data>
-  <data name="&gt;&gt;Willkommenstext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Willkommenstext.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Willkommenstext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>700, 256</value>
-  </data>
-  <data name="OK_Button_Willkommenstext.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OK_Button_Willkommenstext.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="Willkommenstext.Text" xml:space="preserve">
-    <value>Ein Thinkpad ist aus dem Labor verschwunden. Ihre Aufgabe ist, falls Sie es akzeptieren (und wir hoffen, Sie tun es), 
-eine Datenbank und einige Hinweise zu verwenden, um herauszufinden, wer das fehlende Thinkpad hat. Sie sollen
- sich dabei mit SQL-Abfragen vertraut machen.
-
-Die Datenbank besteht aus 4 Tabellen:
-- Die Tabelle SECURITY, die Ein- und Auscheckzeiten der Besucherausweise beinhaltet
-- Die Tabelle MITARBEITER mit Informationen über die Mitarbeiter im Labor
-- Die Tabelle LOBBY mit den Namen und Ausweisnummern der Besucher
-- Die Tabelle HARDWARE mit Serien-und Typenbezeichnungen der Mitarbeiter-Geräte
-
-Hinweise für die Lösung der Rätsel gibt es in dem Fenster, das nach dieser Willkommensnachricht erscheinen wird, 
-zusammen mit einer Frage, die Sie richtig beantworten müssen, bevor der nächste Hinweis erscheint. Wenn Sie den 
-Verdächtigen identifiziert haben, müssen Sie noch eine zusätzliche Aufgabe lösen. Wenn Sie damit fertig sind, klicken 
-Sie auf die Schaltfläche „Fall gelöst“, die im unteren Teil des Fensters erscheinen wird.
-
-Viel Glück und viel Spaß!</value>
-  </data>
-  <data name="OK_Button_Willkommenstext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 268</value>
-  </data>
-  <data name="&gt;&gt;OK_Button_Willkommenstext.Name" xml:space="preserve">
-    <value>OK_Button_Willkommenstext</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIABAEwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgEAAAA9ntg7QAAEwdJ
@@ -263,34 +205,4 @@ Viel Glück und viel Spaß!</value>
         EEIIIYSQosN/ASO75v0UffijAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Willkommenstext.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;OK_Button_Willkommenstext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Willkommenstext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
-  </data>
-  <data name="Willkommenstext.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="&gt;&gt;OK_Button_Willkommenstext.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Herzlich willkommen bei unserem Detektivspiel</value>
-  </data>
-  <data name="Willkommenstext.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;Willkommenstext.Name" xml:space="preserve">
-    <value>Willkommenstext</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

@@ -5,6 +5,18 @@ namespace Detektivspiel
 {
     public partial class MsgBox : Form
     {
+        public string Content
+        {
+            get{ return lbl_msgbox.Text; }
+            set{ lbl_msgbox.Text = value; }
+        }
+
+        public string Title
+        {
+            get{ return this.Text; }
+            set{ this.Text = value; }
+        }
+
         public MsgBox()
         {
             InitializeComponent();
@@ -14,27 +26,5 @@ namespace Detektivspiel
         {
 
         }
-
-
-        public string Content { 
-            get
-            {
-                return lbl_msgbox.Text;
-            }
-            set{
-                lbl_msgbox.Text = value;
-            } }
-
-        
-           public string Title { 
-            get
-            {
-                return this.Text;
-            }
-            set{
-                this.Text = value;
-            } }
-
-        
     }
 }

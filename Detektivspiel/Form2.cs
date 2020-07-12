@@ -13,23 +13,12 @@ namespace Detektivspiel
         string[] m_lblHinweis;
         int m_Aktuell;
         int m_LetzteAntwort = -1;
+
+        // database connection object
+        MySqlConnection detektivspielConnection;
         
-
-        // database connection objects
-        MySqlConnection detektivspielConnection = new MySqlConnection();
-        MySqlCommand detektivspielCommand = new MySqlCommand();
-
-        private string server;
-        private string user_id;
-        private string password;
-        private short port;
-        private string database;
-        private string ssl_mode;
-
-        public Form2(string login_server, string login_user_id, string login_password, short login_port, string login_database, string login_ssl_mode)
+        public Form2(LoginDatabase loginWInodw)
         {
-            InitializeComponent();
-
             m_Hinweise = new string[8];
             m_Fragen = new string[8];
             m_Antworten = new string[8];
@@ -38,14 +27,18 @@ namespace Detektivspiel
             //Anfangs sind wir bei der ersten Frage
             m_Aktuell = 0;
 
-            // assign the database credentials from database loginmask form
-            server = login_server;
-            user_id = login_user_id;
-            password = login_password;
-            port = login_port;
-            database = login_database;
-            ssl_mode = login_ssl_mode;
+            // assign the database credentials from database loginmask formular and 
+            // prepopulate MySQL-Connection 
+            detektivspielConnection = new MySqlConnection();
+            detektivspielConnection.ConnectionString =
+                $"server={loginWInodw.server};" +
+                $"user id={loginWInodw.user_id};" +
+                $"password={loginWInodw.password};" +
+                $"port={loginWInodw.port};" +
+                $"database={loginWInodw.database};" +
+                $"SslMode={loginWInodw.ssl_mode}";
 
+            InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -96,15 +89,6 @@ namespace Detektivspiel
             Antwortfeld.Text = "";
             btn_weiter.Enabled = false;
             btn_zurueck.Enabled = false;
-
-            // prepopulate MySQL-Connection 
-            detektivspielConnection.ConnectionString =
-                $"server={server};" +
-                $"user id={user_id};" +
-                $"password={password};" +
-                $"port={port};" +
-                $"database={database};" +
-                $"SslMode={ssl_mode}";
         }
 
         private void btn_weiter_Click(object sender, EventArgs e)
@@ -242,10 +226,11 @@ namespace Detektivspiel
             {
                 return;
             }
-
+            // remove whitespace before and after query string
+            Txt_QueryCmd.Text = Txt_QueryCmd.Text.Trim();
             if (Txt_QueryCmd.Text.ToUpper().StartsWith("SELECT"))
             {
-                DataTable myDataTable = RunSelectQuery(detektivspielConnection, detektivspielCommand, out bool success);
+                DataTable myDataTable = RunSelectQuery(detektivspielConnection, out bool success);
 
                 if (success)
                 {
@@ -256,13 +241,13 @@ namespace Detektivspiel
             }
             else if (Txt_QueryCmd.Text.ToUpper().StartsWith("INSERT") || Txt_QueryCmd.Text.ToUpper().StartsWith("UPDATE"))
             {
-                CheckNonQueryResult(RunNonQuery(detektivspielConnection, detektivspielCommand));
+                CheckNonQueryResult(RunNonQuery(detektivspielConnection));
             }
             else if (Txt_QueryCmd.Text.ToUpper().StartsWith("DELETE"))
             {
-                if (MessageBox.Show("Wollen Sie wirklich einen Datensatz löschen?", "Löschen", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Wollen Sie wirklich einen Datensatz löschen?", "Löschen", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    CheckNonQueryResult(RunNonQuery(detektivspielConnection, detektivspielCommand));                 
+                    CheckNonQueryResult(RunNonQuery(detektivspielConnection));                 
                 }
             }
             else
@@ -282,25 +267,24 @@ namespace Detektivspiel
             }
         }
 
-        private DataTable RunSelectQuery(MySqlConnection con, MySqlCommand cmd, out bool success)
+        private DataTable RunSelectQuery(MySqlConnection con, out bool success)
         {
+            MySqlCommand cmd = new MySqlCommand();
+
             // link db connection to query command
             cmd.Connection = con;
             // add query text
             cmd.CommandText = Txt_QueryCmd.Text;
-
             // create RAM table
             DataTable dt = new DataTable();
 
             try
             {
                 con.Open();
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
                 // fil the RAM-Table with the query result
                 adapter.Fill(dt);
-
                 success = true;
             }
             catch (Exception ex)
@@ -313,20 +297,20 @@ namespace Detektivspiel
             return dt;
         }
 
-        private Int32 RunNonQuery(MySqlConnection con, MySqlCommand cmd)
+        private Int32 RunNonQuery(MySqlConnection con)
         {
+            MySqlCommand cmd = new MySqlCommand();
+
             // link db connection to query command
             cmd.Connection = con;
             // add query text
             cmd.CommandText = Txt_QueryCmd.Text;
-
             // set default
             Int32 count = -1;
 
             try
             {
                 con.Open();
-
                 // get number of datasets
                 count = cmd.ExecuteNonQuery();
             }
