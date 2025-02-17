@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository has been archvied on 17.02.2025
+
 # Detektivspiel
 Learn SQL basics and relational database management by playing a modern investigation. Use technology to find the theaf and uncover how database technology can be applied to business situations to help you manage your company information.  
 The program is **only available in German**.
